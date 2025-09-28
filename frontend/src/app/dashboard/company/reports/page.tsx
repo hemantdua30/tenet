@@ -62,7 +62,7 @@ const ReportsPage = () => {
       hour: '2-digit',
       minute: '2-digit'
     });
-  };
+  }; 
 
   // Get status icon and class
   const getStatusInfo = (status: string) => {
