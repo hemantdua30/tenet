@@ -1,0 +1,455 @@
+/* Technician dashboard styles */
+
+/* Work Order List */
+.workOrderList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.workOrderCard {
+  background: rgba(15, 15, 15, 0.6);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.workOrderCard:hover {
+  background: rgba(20, 20, 20, 0.8);
+  border-color: rgba(139, 92, 246, 0.2);
+  transform: translateY(-2px);
+}
+
+.workOrderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.workOrderId {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--foreground);
+}
+
+.workOrderStatus {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.workOrderStatus.pending {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.workOrderStatus.inProgress {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.workOrderStatus.completed {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.workOrderPriority {
+  margin-left: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.workOrderPriority.high {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.workOrderPriority.medium {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.workOrderPriority.low {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.workOrderContent {
+  margin-bottom: 15px;
+}
+
+.workOrderTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--foreground);
+}
+
+.workOrderDescription {
+  font-size: 0.9rem;
+  color: var(--gray-light);
+  margin-bottom: 10px;
+}
+
+.workOrderMeta {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+  font-size: 0.85rem;
+  color: var(--gray-light);
+}
+
+.workOrderMetaItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.workOrderActions {
+  display: flex;
+  gap: 10px;
+}
+
+.workOrderButton {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.workOrderButton.primary {
+  background: var(--accent-purple);
+  color: white;
+  border: none;
+}
+
+.workOrderButton.primary:hover {
+  background: var(--accent-purple-dark);
+}
+
+.workOrderButton.secondary {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.workOrderButton.secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Technician Stats */
+.technicianStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.technicianStatCard {
+  background: rgba(15, 15, 15, 0.6);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.technicianStatCard:hover {
+  background: rgba(20, 20, 20, 0.8);
+  border-color: rgba(139, 92, 246, 0.2);
+  transform: translateY(-3px);
+}
+
+.technicianStatValue {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  background: linear-gradient(to right, #ffffff, #a0a0a0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.technicianStatLabel {
+  color: var(--gray-light);
+  font-size: 0.9rem;
+}
+
+/* Scheduled Tasks */
+.scheduledTasks {
+  margin-top: 30px;
+}
+
+.taskDay {
+  margin-bottom: 25px;
+}
+
+.taskDayHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.taskDayLabel {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.taskCountBadge {
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--accent-purple-light);
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.taskTimeline {
+  position: relative;
+  padding-left: 20px;
+}
+
+.taskTimeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 1px;
+}
+
+.taskItem {
+  position: relative;
+  padding: 10px 0 10px 25px;
+  margin-bottom: 5px;
+}
+
+.taskItem::before {
+  content: '';
+  position: absolute;
+  left: -9px;
+  top: 15px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--background-dark);
+  border: 2px solid var(--accent-purple);
+  z-index: 1;
+}
+
+.taskTime {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent-purple-light);
+  margin-bottom: 5px;
+}
+
+.taskTitle {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--foreground);
+}
+
+.taskLocation {
+  font-size: 0.85rem;
+  color: var(--gray-light);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Parts Inventory */
+.partsInventory {
+  margin-top: 30px;
+}
+
+.inventorySearch {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.searchInput {
+  background: rgba(15, 15, 15, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--foreground);
+  padding: 10px 15px 10px 40px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  width: 100%;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.searchInput:focus {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-light);
+}
+
+.inventoryTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inventoryTable th {
+  text-align: left;
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--gray-light);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.inventoryTable td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  color: var(--foreground);
+  font-size: 0.9rem;
+}
+
+.inventoryTable tr:hover td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.partName {
+  font-weight: 500;
+}
+
+.partQuantity {
+  text-align: center;
+}
+
+.partStatus {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.partStatus.inStock {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.partStatus.lowStock {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.partStatus.outOfStock {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.requestButton {
+  background: transparent;
+  color: var(--accent-purple-light);
+  border: 1px solid var(--accent-purple-light);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.requestButton:hover {
+  background: rgba(139, 92, 246, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  .technicianStats {
+    grid-template-columns: 1fr;
+  }
+  
+  .workOrderHeader,
+  .workOrderMeta,
+  .workOrderActions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .workOrderStatus,
+  .workOrderPriority {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  
+  .inventoryTable, 
+  .inventoryTable thead, 
+  .inventoryTable tbody, 
+  .inventoryTable th, 
+  .inventoryTable td, 
+  .inventoryTable tr {
+    display: block;
+  }
+  
+  .inventoryTable thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  .inventoryTable tr {
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 8px;
+  }
+  
+  .inventoryTable td {
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    position: relative;
+    padding-left: 120px;
+    min-height: 35px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .inventoryTable td:before {
+    position: absolute;
+    left: 10px;
+    width: 100px;
+    font-weight: 500;
+    color: var(--gray-light);
+  }
+  
+  .inventoryTable td:nth-of-type(1):before { content: "Part Name"; }
+  .inventoryTable td:nth-of-type(2):before { content: "ID"; }
+  .inventoryTable td:nth-of-type(3):before { content: "Quantity"; }
+  .inventoryTable td:nth-of-type(4):before { content: "Status"; }
+  .inventoryTable td:nth-of-type(5):before { content: "Action"; }
+} 

@@ -1,0 +1,315 @@
+/* Inspect Page Styles */
+.inspectPage {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #374151;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6a26cd;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.backButton:hover {
+  color: #9355e8;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  color: #f3f4f6;
+}
+
+.inspectionStatus {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.completed {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.inProgress {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.loadingContainer, .errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #374151;
+  border-top: 3px solid #6a26cd;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.machineInfo, .inspectionResults {
+  background: linear-gradient(135deg, #1f2937, #374151);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid #374151;
+}
+
+.machineInfo h3, .inspectionResults h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f3f4f6;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.infoItem label {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.infoItem span {
+  color: #f3f4f6;
+  font-weight: 500;
+}
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+.resultCard {
+  background: rgba(55, 65, 81, 0.5);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #4b5563;
+}
+
+.resultHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.resultHeader h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f3f4f6;
+}
+
+.statusBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  background: rgba(55, 65, 81, 0.5);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.resultContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.valueInput {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.valueInput label {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  min-width: 60px;
+}
+
+.input {
+  flex: 1;
+  background: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  color: #f3f4f6;
+  font-size: 0.875rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #6a26cd;
+  box-shadow: 0 0 0 2px rgba(106, 38, 205, 0.1);
+}
+
+.unit {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  min-width: 40px;
+}
+
+.notesInput {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.notesInput label {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.textarea {
+  background: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  color: #f3f4f6;
+  font-size: 0.875rem;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #6a26cd;
+  box-shadow: 0 0 0 2px rgba(106, 38, 205, 0.1);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.primaryButton, .secondaryButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none;
+  font-size: 0.875rem;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, #6a26cd, #9355e8);
+  color: white;
+}
+
+.primaryButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(106, 38, 205, 0.3);
+}
+
+.primaryButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #6a26cd;
+  border: 1px solid #6a26cd;
+}
+
+.secondaryButton:hover {
+  background: rgba(106, 38, 205, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Status colors */
+.statusPass {
+  color: #22c55e;
+}
+
+.statusFail {
+  color: #ef4444;
+}
+
+.statusWarning {
+  color: #f59e0b;
+}
+
+.statusPending {
+  color: #6b7280;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .inspectPage {
+    padding: 1rem;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .resultsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+  
+  .valueInput {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

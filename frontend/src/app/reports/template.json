@@ -1,0 +1,55 @@
+{
+  "Alignment": {
+    "X_ZLevelDifference_mm": 0.2,
+    "Tolerance_mm": 0.2,
+    "Status": "Within tolerance",
+    "Source": "ExtruderAssembly"
+  },
+  "FanSpeed": {
+    "MeasuredFrequencyHz": {
+      "min": 83,
+      "max": 150
+    },
+    "RequiredRangeHz": {
+      "min": 95,
+      "max": 105
+    },
+    "Status": "Out of specified range",
+    "Source": "CoolingSystem.FanFrequencyHz"
+  },
+  "MassFlowRate": {
+    "MeasuredRange_gps": {
+      "min": 0.002,
+      "max": 0.010
+    },
+    "RequiredRange_gps": {
+      "min": 0.000974,
+      "max": 0.003896
+    },
+    "Status": "Partially within range",
+    "Source": "MaterialFlow.MassFlowRate_gps"
+  },
+  "ForceCalibration": {
+    "MeasuredForce_N": {
+      "min": 0.2,
+      "max": 0.8
+    },
+    "ExpectedRange_N": {
+      "min": 0.2,
+      "max": 0.8
+    },
+    "Status": "Pass",
+    "Source": "ElectronicsAndSensors.LoadCellSensor"
+  },
+  "AmbientConditions": {
+    "MeasuredTemperature_C": 25,
+    "RequiredRange_C": {
+      "min": 18,
+      "max": 38
+    },
+    "MeasuredHumidity_%": 43,
+    "MaxAllowedHumidity_%": 85,
+    "Status": "Within acceptable limits",
+    "Source": "EnvironmentalConditions"
+  }
+} 

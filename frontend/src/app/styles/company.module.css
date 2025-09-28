@@ -1,0 +1,400 @@
+/* Company dashboard styles */
+
+/* Overview stats */
+.companyStats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.statsCard {
+  background: rgba(15, 15, 15, 0.6);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.statsCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.05),
+    transparent,
+    rgba(139, 92, 246, 0.05)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.statsCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.statsCard:hover::before {
+  opacity: 1;
+}
+
+.statIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-purple-light);
+}
+
+.statInfo {
+  flex: 1;
+}
+
+.statValue {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.statLabel {
+  color: var(--gray-light);
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* Dashboard Cards */
+.dashboardCard {
+  background: rgba(10, 10, 10, 0.6);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.dashboardCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.05),
+    transparent,
+    rgba(139, 92, 246, 0.05)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dashboardCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.dashboardCard:hover::before {
+  opacity: 1;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.cardHeader::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--accent-purple);
+  border-radius: 1px;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.cardAction {
+  color: var(--accent-purple-light);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.cardAction:hover {
+  color: var(--accent-purple);
+  text-decoration: underline;
+}
+
+.cardGrid {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.cardGrid.cols2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cardGrid.cols3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cardGrid.cols4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Facility Selector */
+.facilitySelector {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.facilitySelector label {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.facilitySelect {
+  background: rgba(15, 15, 15, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--foreground);
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  min-width: 200px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.facilitySelect:focus {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+/* Machine status chart */
+.machineStatusChart {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.statusLegend {
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--gray-light);
+}
+
+.legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+}
+
+.legendDot.healthy {
+  background: #10b981;
+}
+
+.legendDot.warning {
+  background: #f59e0b;
+}
+
+.legendDot.critical {
+  background: #ef4444;
+}
+
+.legendDot.maintenance {
+  background: #3b82f6;
+}
+
+.donutChart {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.donutInner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+.donutValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  line-height: 1;
+}
+
+.donutLabel {
+  color: var(--gray-light);
+  font-size: 0.9rem;
+}
+
+.donutSvg {
+  transform: rotate(-90deg);
+}
+
+.donutSegment {
+  transition: all 0.3s;
+}
+
+.healthySegment {
+  fill: #10b981;
+}
+
+.warningSegment {
+  fill: #f59e0b;
+}
+
+.criticalSegment {
+  fill: #ef4444;
+}
+
+.maintenanceSegment {
+  fill: #3b82f6;
+}
+
+/* Alerts list */
+.alertsList {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.alertItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(15, 15, 15, 0.6);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s;
+}
+
+.alertItem:hover {
+  background: rgba(20, 20, 20, 0.8);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.alertPriority {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.alertPriority.critical {
+  background: #ef4444;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+.alertPriority.warning {
+  background: #f59e0b;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.alertPriority.info {
+  background: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.alertContent {
+  flex: 1;
+}
+
+.alertTitle {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--foreground);
+}
+
+.alertInfo {
+  font-size: 0.85rem;
+  color: var(--gray-light);
+}
+
+.alertActionButton {
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--accent-purple-light);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.alertActionButton:hover {
+  background: rgba(139, 92, 246, 0.2);
+  color: var(--accent-purple);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .cardGrid.cols3,
+  .cardGrid.cols4,
+  .companyStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .machineStatusChart {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardGrid,
+  .cardGrid.cols2,
+  .cardGrid.cols3,
+  .cardGrid.cols4,
+  .companyStats {
+    grid-template-columns: 1fr;
+  }
+} 

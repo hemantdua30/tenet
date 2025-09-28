@@ -1,0 +1,856 @@
+/* Core variables for theming */
+.variables {
+  --primary-color: #6a26cd;
+  --primary-light: #9355e8;
+  --secondary-color: #3b82f6;
+  --accent-purple: #8b5cf6;
+  --accent-blue: #3b82f6;
+  --accent-amber: #f59e0b;
+  --accent-red: #ef4444;
+  --accent-green: #22c55e;
+  --text-color: #f3f4f6;
+  --text-light: #d1d5db;
+  --text-dark: #111827;
+  --background-dark: #1a1a1a;
+  --background-card: #242424;
+  --background-hover: #2f2f2f;
+  --border-color: #333333;
+  --success-color: #22c55e;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
+  --neutral-color: #6b7280;
+  --transition-speed: 0.2s;
+}
+
+/* Main container */
+.analyticsContainer {
+  scroll-width: none;
+  composes: variables;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background-color: var(--background-dark);
+  color: var(--text-color);
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Page header */
+.analyticsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-card);
+  color: var(--text-color);
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  transition: background-color var(--transition-speed);
+}
+
+.backButton:hover {
+  background-color: var(--background-hover);
+}
+
+.pageTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  background: linear-gradient(90deg, var(--primary-light), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.headerControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Period selector */
+.periodSelector {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.periodLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+.periodOptions {
+  display: flex;
+  background-color: var(--background-card);
+  border-radius: 0.375rem;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.periodOption {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all var(--transition-speed);
+}
+
+.periodOption:hover {
+  background-color: var(--background-hover);
+}
+
+.activePeriod {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.activePeriod:hover {
+  background-color: var(--primary-color);
+}
+
+/* Plant selector */
+.plantSelector {
+  position: relative;
+}
+
+.plantDropdown {
+  appearance: none;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  background-color: var(--background-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: border-color var(--transition-speed);
+}
+
+.plantDropdown:focus {
+  outline: none;
+  border-color: var(--primary-light);
+}
+
+.plantSelector::after {
+  content: '';
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--text-light);
+  pointer-events: none;
+}
+
+/* Download button */
+.downloadButton {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 0.375rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.downloadButton:hover {
+  background-color: var(--primary-light);
+}
+
+/* Insights grid */
+.insightsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.insightCard {
+  display: flex;
+  padding: 1.25rem;
+  background-color: var(--background-card);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.insightCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.insightIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+}
+
+.insightContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.insightTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.insightDescription {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin: 0 0 0.75rem 0;
+}
+
+.insightMetrics {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.insightValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.insightChange {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.trendUp {
+  color: var(--success-color);
+}
+
+.trendDown {
+  color: var(--danger-color);
+}
+
+/* Analytics panels */
+.analyticsPanels {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.analyticsPanel {
+  background-color: var(--background-card);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.panelTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.panelControls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.infoButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: color var(--transition-speed);
+}
+
+.infoButton:hover {
+  color: var(--primary-light);
+}
+
+.panelContent {
+  padding: 1.25rem;
+  min-height: 300px;
+}
+
+.panelFooter {
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--border-color);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Health score chart */
+.healthScoreChart {
+  height: 240px;
+  position: relative;
+}
+
+.healthScoreSummary, 
+.inspectionSummary {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.summaryLabel {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.summaryValue {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Mock charts for visualization */
+.chartPlaceholder {
+  height: 100%;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.mockLineChart {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mockDataPoint {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.mockDataPoint::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  opacity: 0.4;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
+
+.mockChartLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+              linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 25% 25%;
+}
+
+.chartAxis {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.axisLabel {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+/* Machine status distribution */
+.machineStatusChart {
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.statusDistribution {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.statusGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.statusBar {
+  height: 10px;
+  border-radius: 5px;
+  transition: width 1s ease-in-out;
+}
+
+.statusOperational {
+  background-color: var(--success-color);
+}
+
+.statusMaintenance {
+  background-color: var(--warning-color);
+}
+
+.statusDown {
+  background-color: var(--danger-color);
+}
+
+.statusIdle {
+  background-color: var(--neutral-color);
+}
+
+.statusLabel {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.statusCount {
+  margin-left: auto;
+  font-weight: 600;
+}
+
+/* Inspection trends */
+.inspectionTrendsChart {
+  height: 240px;
+}
+
+.mockBarChart {
+  height: 210px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2px;
+  padding-bottom: 2rem;
+}
+
+.mockBarColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mockBar {
+  width: 100%;
+  max-width: 24px;
+  background: linear-gradient(180deg, var(--primary-light) 0%, var(--primary-color) 100%);
+  border-radius: 4px 4px 0 0;
+  transition: height 1s ease-in-out;
+}
+
+.mockBarLabel {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  transform: rotate(-45deg);
+  transform-origin: top left;
+  margin-top: 1rem;
+  white-space: nowrap;
+}
+
+/* Predictive maintenance */
+.predictionTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.tableHeaderCell {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableCell {
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+}
+
+.riskIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.riskBar {
+  height: 6px;
+  border-radius: 3px;
+}
+
+.riskValue {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.actionTag {
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.actionUrgent {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--danger-color);
+}
+
+.actionWarning {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--warning-color);
+}
+
+.actionNormal {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: var(--secondary-color);
+}
+
+.predictionDisclaimer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0 0 0;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  border-top: 1px solid var(--border-color);
+  margin-top: 1rem;
+}
+
+/* Plant performance section */
+.plantPerformanceSection {
+  margin-top: 1rem;
+}
+
+.sectionHeader {
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.plantGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.plantCard {
+  background-color: var(--background-card);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.plantCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.plantHeader {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.plantName {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.plantLocation {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.plantMetrics {
+  display: flex;
+  padding: 1.25rem;
+  gap: 1.5rem;
+}
+
+.plantHealthScore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.healthGauge {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.healthGaugeInner {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--background-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.healthValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.healthLabel {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.plantStatsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.plantStat {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+.statValue {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Loading Container */
+.loadingContainer {
+  composes: variables;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--background-dark);
+}
+
+.loadingSpinner {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 3px solid rgba(106, 38, 205, 0.2);
+  border-top-color: var(--primary-color);
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.loadingText {
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error Container */
+.errorContainer {
+  composes: variables;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--background-dark);
+  color: var(--text-color);
+  text-align: center;
+  padding: 2rem;
+}
+
+.errorText {
+  margin: 1rem 0 2rem;
+  color: var(--text-light);
+}
+
+.retryButton {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.retryButton:hover {
+  background-color: var(--primary-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .analyticsPanels {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .analyticsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .headerControls {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+  }
+  
+  .periodSelector, .plantSelector, .downloadButton {
+    width: 100%;
+  }
+  
+  .plantDropdown {
+    width: 100%;
+  }
+  
+  .insightsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tableHeader, .tableRow {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+  
+  .tableHeaderCell:nth-child(3), .tableCell:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .analyticsContainer {
+    padding: 1rem;
+  }
+  
+  .periodOptions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .periodOption {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .plantGrid {
+    grid-template-columns: 1fr;
+  }
+} 

@@ -1,0 +1,31 @@
+/* Root styles */
+.root {
+  --primary-glow: conic-gradient(
+    from 180deg at 50% 50%,
+    #8b5cf6 0deg,
+    #7c3aed 55deg,
+    #6d28d9 120deg,
+    #5b21b6 160deg,
+    transparent 360deg
+  );
+  --secondary-glow: linear-gradient(
+    to bottom right,
+    rgba(139, 92, 246, 0),
+    rgba(139, 92, 246, 0),
+    rgba(139, 92, 246, 0.3)
+  );
+}
+
+/* Page wrapper and content */
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  opacity: 1;
+  position: relative;
+}
+
+.mainContent {
+  flex: 1;
+  position: relative;
+} 
